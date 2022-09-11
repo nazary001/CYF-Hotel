@@ -4,6 +4,23 @@ body {
   font-family: sans-serif;
 }
 
+.green {
+  background-color: green;
+}
+
+.white {
+  background-color: white;
+}
+
+.App-header img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.App-header h1 {
+  margin: 0;
+}
+
 .search-wrapper {
   border-top: 1px solid #e9ecef;
 }
@@ -23,4 +40,73 @@ body {
 
 .search-row input {
   margin-right: 10px;
+}
+
+.info_cards {
+  display: flex;
+  margin: 5rem;
+  justify-content: space-around;
+}
+
+.info_cards img {
+  width: 20vw;
+  height: 13rem;
+}
+
+.London_card,
+.Manchester_card,
+.Glasgow_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: white solid 1px;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  background-color: rgba(219, 221, 221, 0.575);
+}
+
+.card_body {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_body a {
+  background-color: #13141471;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.table_div {
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  width: 70vw;
+  margin-bottom: 5rem;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.footer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
