@@ -10,13 +10,19 @@ function getDayDiff(start, end) {
 }
 
 function SearchResults() {
-  const [selectedRow, setSelectedRow] = useState(null);
+  const [selectedRows, setSelectedRows] = useState([]);
 
-  const onRowClicked = id => {
-    if (id === selectedRow) {
-      setSelectedRow(null);
+  const onRowClicked = event => {
+    if (event.ctrlKey) {
+      if (selectedRows.includes(event.target.parentElement.id)) {
+        setSelectedRows(
+          [...selectedRows].splice(selectedRows.indexOf(event.target.id), 1)
+        );
+      } else {
+        setSelectedRows([...selectedRows].push(event.target.parentElement.id));
+      }
     } else {
-      setSelectedRow(id);
+      setSelectedRows([event.target.parentElement.id]);
     }
   };
 
@@ -41,10 +47,11 @@ function SearchResults() {
             return (
               <tr
                 id={booking.id}
-                onClick={() => onRowClicked(booking.id)}
+                onClick={event => onRowClicked(event)}
                 style={{
-                  backgroundColor:
-                    selectedRow === booking.id ? "#C0C0C0" : "white"
+                  backgroundColor: selectedRows.includes(booking.id)
+                    ? "#C0C0C0"
+                    : "white"
                 }}
               >
                 <th>{booking.id}</th>
